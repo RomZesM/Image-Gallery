@@ -2,6 +2,9 @@
 
 const galleryContainer = document.querySelector(".gallery-container");
 const searchForm = document.querySelector(".search_form")
+const modal_overlay = document.querySelector(".modal-overlay");
+const big_picture = document.querySelector(".big_picture");
+
 //let generatedUrl = '';
 
 //https://api.unsplash.com/photos/?client_id=YOUR_ACCESS_KEY
@@ -32,6 +35,11 @@ searchForm.addEventListener("submit", (event)=>{
 	event.preventDefault();//prevent submition of the form	
 });
 
+document.querySelector(".pic_close_button").addEventListener("click", (e)=>{
+	modal_overlay.classList.remove("modal-overlay-visible");
+});
+
+
 //get JSON from API
 async function getData(url) {
 	console.log("start request");
@@ -55,6 +63,12 @@ async function getData(url) {
 		const div_img = document.createElement('div');
 			div_img.classList.add('gallery-img');
 			div_img.style.backgroundImage = `url(${data.results[i].urls.regular})`;
+			
+			div_img.addEventListener("click", (e)=>{
+				modal_overlay.classList.add("modal-overlay-visible");
+				big_picture.style.backgroundImage = `url(${data.results[i].urls.regular})`;
+			})			
+			
 			galleryContainer.append(div_img);
 		}
 	}
@@ -69,6 +83,13 @@ async function getData(url) {
 			const div_img = document.createElement('div');
 			div_img.classList.add('gallery-img');
 			div_img.style.backgroundImage = `url(${retrievedObject.results[i].urls.regular})`;
+			
+			//show image by click
+			div_img.addEventListener("click", (e)=>{
+				modal_overlay.classList.add("modal-overlay-visible");
+				big_picture.style.backgroundImage =  `url(${retrievedObject.results[i].urls.regular})`;
+			})
+			
 			galleryContainer.append(div_img);
 	}
   }
