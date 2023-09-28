@@ -52,13 +52,13 @@ async function getData(url) {
 	galleryContainer.innerHTML = ""; //clear old file
 
 	for (let i = 0; i < data.results.length; i++) {
-			const img = document.createElement('img');
-			img.classList.add('gallery-img')
-			img.src = `${data.results[i].urls.regular}`;
-			img.alt = `${data.results[i].alt_description}`;
-			galleryContainer.append(img);
+		const div_img = document.createElement('div');
+			div_img.classList.add('gallery-img');
+			div_img.style.backgroundImage = `url(${data.results[i].urls.regular})`;
+			galleryContainer.append(div_img);
+		}
 	}
-  }
+  
   //!delete just test stub function
     function showImages2(){
 	var retrievedObject = JSON.parse(localStorage.getItem('testObject'));
@@ -66,11 +66,10 @@ async function getData(url) {
 	galleryContainer.innerHTML = "";
 
 	for (let i = 0; i < retrievedObject.results.length; i++) {
-			const img = document.createElement('img');
-			img.classList.add('gallery-img')
-			img.src = `${retrievedObject.results[i].urls.regular}`;
-			img.alt = `${retrievedObject.results[i].alt_description}`;
-			galleryContainer.append(img);
+			const div_img = document.createElement('div');
+			div_img.classList.add('gallery-img');
+			div_img.style.backgroundImage = `url(${retrievedObject.results[i].urls.regular})`;
+			galleryContainer.append(div_img);
 	}
   }
  
@@ -80,6 +79,7 @@ async function getData(url) {
 	const json = await response.json();
 
 	showImages(json)
+	//showImages2()
 }
 
 

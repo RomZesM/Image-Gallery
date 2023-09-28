@@ -1,18 +1,68 @@
+body{
+	margin: auto;
+	font-family: 'Roboto', sans-serif;
+}
+
+
+
+.logo_search_container{
+	width: 1280px;
+
+	margin: auto;
+	display: flex;
+	justify-content: space-around;
+	align-items: baseline;
+}
+
+.logo{
+	margin-top: 20px;
+	margin-bottom: 20px;
+}
+
+
+.search_form{
+	margin-top: 20px;
+	margin-bottom: 20px;
+}
+
+.line{
+	background-color: brown;
+	height: 3px;
+	width: 90%;
+	margin: auto;
+	margin-bottom: 10px;
+	
+
+}
+
 
 .gallery-container{
-	border: violet solid 1px;
+	display: flex;
+	flex-wrap: wrap;
+	width: 1280px;
+	
+	margin: auto;
+	margin-bottom: 10px;
+	
 }
 
 .gallery-img{
-	width: 50%;
-	height: 50%;
+	
+	/*width:calc(33.3% - 10px); */
+	width: 416px;
+	height:244px;
+	background-size: cover;
+	background-position: center;
+	margin: 5px;
+	border-radius: 5px;
+		
 }
 
 footer{
+	margin-top: 20px;
 	display: flex;
-	justify-content: center;
-	gap: 30px;
-}
+	justify-content: space-around;
+	}
 
 .school img{
 	width: 80px;
@@ -22,4 +72,47 @@ footer{
 .git img{
 	width: 50px;
 	height: 50px;
+}
+
+@media only screen and (max-width: 1100px) {
+	.gallery-container{	
+		width: 854px
+	}
+	.logo_search_container{
+		width: 854px
+	}
+}
+
+@media only screen and (max-width: 830px) {
+	.gallery-container{	
+		width: 425px
+	}
+	.logo_search_container{
+		width: 416px;
+		flex-direction: column;
+		align-items: center;
+	}
+
+	.logo{
+		font-size: 30px;
+	}
+
+	input[type="search" i] {
+		width: 200px;
+	}
+}
+
+@media only screen and (max-width: 416px) {
+	.gallery-img{
+		width: 100vw;
+		height: 25vh;
+	}
+	 .gallery-container{
+		width: 100vw;
+	 }
+
+
+	 .logo_search_container{
+		width: 100vw;
+	 }
 }

@@ -3,18 +3,34 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;400;700&display=swap" rel="stylesheet">
+	
 	<link rel="stylesheet" href="css/style.css">
 	<title>Image Gallery</title>
 </head>
 <body>
-	<form class="search_form">
-		<label for="images_query">Image Search</label>
-		<input type="search" id="images_query" autofocus placeholder="Search request" autocomplete="off">
-		<button type="submit">Search</button>
+	<header>
+		<div class="logo_search_container">
+			<h1 class="logo">
+				Image Gallery API
+			</h1>
+			<form class="search_form">
+				<label for="images_query"></label>
+				<input type="search" id="images_query" autofocus placeholder="Search request" autocomplete="off">
+			<button type="submit">Search</button>
+		</div>
+		<div class="line"></div>
+
+	</header>
+	<div class="wrapper">
+		
 	</form>
 	
-
 	<div class="gallery-container"></div>
+	</div>
+	<div class="line"></div>
 	<footer>
 		<p class="year">2023</p>
 		<a class="school" href="school">
@@ -24,6 +40,8 @@
 			<img src="assets/ico/github-svgrepo-com.svg" alt="school logo">
 		</a>
 	</footer>
+	</div>
+	
 	
 	<script src="scripts/script.js"></script>
 </body>
