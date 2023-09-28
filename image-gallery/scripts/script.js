@@ -35,10 +35,20 @@ searchForm.addEventListener("submit", (event)=>{
 	event.preventDefault();//prevent submition of the form	
 });
 
+//close button listener
 document.querySelector(".pic_close_button").addEventListener("click", (e)=>{
 	modal_overlay.classList.remove("modal-overlay-visible");
 });
 
+//close while click on overlay
+modal_overlay.addEventListener('click', (closeLogOverlay));
+
+function closeLogOverlay(event) {
+	if(event.target === modal_overlay){
+		modal_overlay.classList.remove("modal-overlay-visible");
+		
+	}
+}
 
 //get JSON from API
 async function getData(url) {
