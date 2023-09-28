@@ -17,12 +17,34 @@ body{
 .logo{
 	margin-top: 20px;
 	margin-bottom: 20px;
+	
 }
 
+.logo::before{
+	content: url(/assets/ico/photo-camera-svgrepo-com.svg);
+	/* display: inline-flex;
+	flex-wrap: wrap; */
+
+	/* background-image: url('/assets/ico/photo-camera-svgrepo-com.svg');
+	background-size: 40px 40px;
+	background-position: center;
+	background-repeat: no-repeat; */
+	
+	height: 40px;
+	width: 40px;
+	
+}
 
 .search_form{
 	margin-top: 20px;
 	margin-bottom: 20px;
+}
+
+input[type="search" i] {
+	border-radius: 20px;
+	border: solid 2px brown;
+	width: 250px;
+	padding-left: 10px;
 }
 
 .line{
@@ -32,7 +54,6 @@ body{
 	margin: auto;
 	margin-bottom: 10px;
 	
-
 }
 
 
@@ -55,6 +76,14 @@ body{
 	background-position: center;
 	margin: 5px;
 	border-radius: 5px;
+	cursor: pointer;
+	transition: all 0.2s ease-in;
+		
+}
+
+.gallery-img:hover{
+	transform: scale(1.05);
+	transition: all 0.2s ease-in;
 		
 }
 
@@ -109,7 +138,7 @@ footer{
 	background-repeat: no-repeat;
 	border: 10px whitesmoke solid;
 	position: relative;
-	background-image: url("https://images.unsplash.com/photo-1574376407492-c3cf78231def?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w1MDc5NDd8MHwxfHNlYXJjaHw1fHxhdXR1bW58ZW58MHwwfHx8MTY5NTg5MDU2Nnww&ixlib=rb-4.0.3&q=80&w=1080");
+	
 }
 
 .pic_close_button{
@@ -156,8 +185,6 @@ footer{
 	 .gallery-container{
 		width: 100vw;
 	 }
-
-
 	 .logo_search_container{
 		width: 100vw;
 	 }

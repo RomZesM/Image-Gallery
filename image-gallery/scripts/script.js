@@ -5,14 +5,9 @@ const searchForm = document.querySelector(".search_form")
 const modal_overlay = document.querySelector(".modal-overlay");
 const big_picture = document.querySelector(".big_picture");
 
-//let generatedUrl = '';
-
 //https://api.unsplash.com/photos/?client_id=YOUR_ACCESS_KEY
 
 let accesKey = "Abed2b9A8CYciNLGC3Ilzfwkw9Lh4-aINn6yKl7ZOxc"
-
-//let url = "https://api.unsplash.com/search/photos?query=spring&per_page=30&orientation=landscape&client_id=Abed2b9A8CYciNLGC3Ilzfwkw9Lh4-aINn6yKl7ZOxc"
-
 
 
 
@@ -30,8 +25,6 @@ searchForm.addEventListener("submit", (event)=>{
 	generatedUrl = "https://api.unsplash.com/search/photos?query=" + searchRequest + "&per_page=30&orientation=landscape&client_id=Abed2b9A8CYciNLGC3Ilzfwkw9Lh4-aINn6yKl7ZOxc"
 	
 	getData(generatedUrl);
-	//showImages2()
-	//console.log(generatedUrl);
 	event.preventDefault();//prevent submition of the form	
 });
 
@@ -55,8 +48,7 @@ async function getData(url) {
 	console.log("start request");
 	const res = await fetch(url);
 	const data = await res.json();
-	//console.log(data);
-	
+		
 	//localStorage.setItem('testObject', JSON.stringify(data)); //save json in Local storage
 	
 	showImages(data);
@@ -65,8 +57,7 @@ async function getData(url) {
   function showImages(data){
 	//var retrievedObject = JSON.parse(localStorage.getItem('testObject'));
 	//console.log('retrievedObject: ', retrievedObject);
-	
-	
+		
 	galleryContainer.innerHTML = ""; //clear old file
 
 	for (let i = 0; i < data.results.length; i++) {
@@ -83,26 +74,26 @@ async function getData(url) {
 		}
 	}
   
-  //!delete just test stub function
-    function showImages2(){
-	var retrievedObject = JSON.parse(localStorage.getItem('testObject'));
+//   //!delete just test stub function
+//     function showImages2(){
+// 	var retrievedObject = JSON.parse(localStorage.getItem('testObject'));
 
-	galleryContainer.innerHTML = "";
+// 	galleryContainer.innerHTML = "";
 
-	for (let i = 0; i < retrievedObject.results.length; i++) {
-			const div_img = document.createElement('div');
-			div_img.classList.add('gallery-img');
-			div_img.style.backgroundImage = `url(${retrievedObject.results[i].urls.regular})`;
+// 	for (let i = 0; i < retrievedObject.results.length; i++) {
+// 			const div_img = document.createElement('div');
+// 			div_img.classList.add('gallery-img');
+// 			div_img.style.backgroundImage = `url(${retrievedObject.results[i].urls.regular})`;
 			
-			//show image by click
-			div_img.addEventListener("click", (e)=>{
-				modal_overlay.classList.add("modal-overlay-visible");
-				big_picture.style.backgroundImage =  `url(${retrievedObject.results[i].urls.regular})`;
-			})
+// 			//show image by click
+// 			div_img.addEventListener("click", (e)=>{
+// 				modal_overlay.classList.add("modal-overlay-visible");
+// 				big_picture.style.backgroundImage =  `url(${retrievedObject.results[i].urls.regular})`;
+// 			})
 			
-			galleryContainer.append(div_img);
-	}
-  }
+// 			galleryContainer.append(div_img);
+// 	}
+//   }
  
 //start first and read from local json  
   async function printLocalJSON() {
@@ -110,7 +101,7 @@ async function getData(url) {
 	const json = await response.json();
 
 	showImages(json)
-	//showImages2()
+	
 }
 
 
