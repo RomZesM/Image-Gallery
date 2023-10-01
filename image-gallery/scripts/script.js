@@ -6,14 +6,19 @@ const modal_overlay = document.querySelector(".modal-overlay");
 const big_picture = document.querySelector(".big_picture");
 
 //https://api.unsplash.com/photos/?client_id=YOUR_ACCESS_KEY
-
+let startRequestUrl = "https://api.unsplash.com/search/photos?query=autumn&per_page=30&orientation=landscape&client_id=Abed2b9A8CYciNLGC3Ilzfwkw9Lh4-aINn6yKl7ZOxc"
 let accesKey = "Abed2b9A8CYciNLGC3Ilzfwkw9Lh4-aINn6yKl7ZOxc"
 
 
 
 let objectFromApi = null;
 
-printLocalJSON();
+//printLocalJSON();
+startWithGardCodeUrl() //it was lesson request
+
+function startWithGardCodeUrl(){
+	getData(startRequestUrl);
+}
 
 searchForm.addEventListener("submit", (event)=>{
 	let generatedUrl = '';
@@ -49,7 +54,7 @@ async function getData(url) {
 	const res = await fetch(url);
 	const data = await res.json();
 		
-	localStorage.setItem('emptyRequest', JSON.stringify(data)); //save json in Local storage
+//	localStorage.setItem('emptyRequest', JSON.stringify(data)); //save json in Local storage
 	
 	showImages(data);
   }
@@ -91,23 +96,11 @@ async function getData(url) {
   async function printLocalJSON() {
 	const response = await fetch("assets/json/start.json");
 	const json = await response.json();
-
+	
 	showImages(json)
 	
 }
 
 
-function showError(){
-	
-	console.log("Bad request");
-	
-	galleryContainer.innerHTML = ""; //clear old file
 
-	const div_empty = document.createElement('div');
-	 div_empty.classList.add('error-message');
-	 div_empty.style.backgroundImage = `url(/assets/img/error.png)`
-	 div_empty.innerHTML = "Nothing was found in UNSPLASH API, try another request"
-
-	galleryContainer.append(div_empty);
-}
  
