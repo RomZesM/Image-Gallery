@@ -21,7 +21,7 @@ body{
 }
 
 .logo::before{
-	content: url(assets/ico/photo-camera-svgrepo-com.svg);
+	content: url(../assets/ico/photo-camera-svgrepo-com.svg);
 	/* display: inline-flex;
 	flex-wrap: wrap; */
 
