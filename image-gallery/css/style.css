@@ -148,6 +148,15 @@ footer{
 	cursor: pointer;
 }
 
+.error-message{
+	margin-top: 20px;
+	font-size: 25px;	
+	background-repeat: no-repeat;
+	background-position: center;
+	text-align: center;
+	height: 700px;
+	flex: auto;
+}
 
 @media only screen and (max-width: 1100px) {
 	.gallery-container{	
