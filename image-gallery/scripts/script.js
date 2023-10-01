@@ -67,7 +67,7 @@ async function getData(url) {
 
 		const div_empty = document.createElement('div');
 		div_empty.classList.add('error-message');
-		div_empty.style.backgroundImage = `url(../assets/img/error.png)`
+		div_empty.style.backgroundImage = `url(assets/img/error.png)`
 		div_empty.innerHTML = "Nothing was found in UNSPLASH API, try another request"
 
 		galleryContainer.append(div_empty);
