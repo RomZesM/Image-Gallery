@@ -1,7 +1,6 @@
-# rsschool-cv
-repo for Rollign Scopes School (front-end cource)
+[Deploy-Link](https://romzesm.github.io/Image-gallery/image-gallery/)
 
-https://RomZesM.github.io/rsschool-cv/cv
+### Simple application for searching images from Unsplash-API (RS-School project)
 
-https://RomZesM.github.io/rsschool-cv/
+![image](https://github.com/RomZesM/Image-gallery/assets/81902803/0604cbb0-36db-4d6c-8518-238dececb5ad)
 
